@@ -13,7 +13,7 @@ app.get('/login', function(req, res) {
     querystring.stringify({
       response_type: 'code',
       client_id: process.env.SPOTIFY_CLIENT_ID,
-      scope: 'user-read-private user-read-email',
+      scope: 'user-read-private user-read-email user-top-read user-read-playback-state',
       redirect_uri
     }))
 })
@@ -34,6 +34,7 @@ app.get('/callback', function(req, res) {
     },
     json: true
   }
+  
   request.post(authOptions, function(error, response, body) {
     var access_token = body.access_token
     let uri = process.env.FRONTEND_URI || 'http://localhost:3000'
