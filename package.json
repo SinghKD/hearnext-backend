@@ -4,11 +4,15 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node server.js",
+    "build": "NODE_ENV=production ./node_modules/.bin/netlify-lambda build src"
   },
   "dependencies": {
     "express": "^4.15.4",
+    "netlify-cli": "^15.4.1",
+    "netlify-lambda": "^2.0.16",
     "querystring": "^0.2.0",
-    "request": "^2.81.0"
+    "request": "^2.81.0",
+    "serverless-http": "^3.2.0"
   }
 }
